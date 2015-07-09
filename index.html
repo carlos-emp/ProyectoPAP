@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html ng-app="app">
+	<head>
+		<meta charset="UTF-8">
+		<title>PAP</title>
+		<meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+		<!-- Bootstrap 3.3.4 -->
+		<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+		<!-- FontAwesome 4.3.0 -->
+		<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+		<!-- Ionicons 2.0.0 -->
+		<link href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet" type="text/css" />
+		<!-- Theme style -->
+		<link href="dist/css/AdminLTE.min.css" rel="stylesheet" type="text/css" />
+		<!-- AdminLTE Skins. Choose a skin from the css/skins
+		folder instead of downloading all of them to reduce the load. -->
+		<link href="dist/css/skins/_all-skins.min.css" rel="stylesheet" type="text/css" />
+
+		<link href="dist/css/skeleton.css" rel="stylesheet" type="text/css" />
+		<link rel="stylesheet" href="dist/css/estilo.css" media="all" />
+
+	</head>
+
+	<div class="carga">
+
+		<div align="center" id="bienvenida">
+
+			<img src="img/icono-min.png" id="icono" alt="" />
+			<h2 class="colorBlanco">¡Bienvenido!</h2>
+
+		</div>
+
+	</div>
+
+	<body class="skin-blue sidebar-mini" ng-controller="initializeApp" >
+
+		<div class="wrapper">
+
+			<header class="main-header">
+				<!-- Logo -->
+				<a class="logo hidden-xs"> <img src="img/logo.png" class="img-responsive" alt="" /> <!-- mini logo for sidebar mini 50x50 pixels --> <span class="logo-mini"><b>PAP</b></span> <!-- logo for regular state and mobile devices --> <span class="logo-lg"><b>PAP</b></span> </a>
+				<!-- Header Navbar: style can be found in header.less -->
+				<nav class="navbar navbar-static-top" role="navigation">
+					<!-- Sidebar toggle button-->
+
+					<a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button"> <span class="sr-only">Toggle navigation</span> </a>
+					<img src="img/logo.png" class="img-responsive hidden-sm hidden-md hidden-lg" id="logo" width="120px" height="120px" alt="" />
+				</nav>
+
+			</header>
+			<!-- Left side column. contains the logo and sidebar -->
+			<aside class="main-sidebar">
+				<!-- sidebar: style can be found in sidebar.less -->
+				<section class="sidebar">
+					<!-- Sidebar user panel -->
+					<div class="user-panel">
+						<div class="pull-left image">
+							<img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image" />
+						</div>
+						<br>
+						<div class="pull-left info">
+							<p>
+								Alejandro Luna
+							</p>
+
+						</div>
+					</div>
+
+					<!-- /.search form -->
+					<!-- sidebar menu: : style can be found in sidebar.less -->
+					<ul class="sidebar-menu">
+						<li class="header">
+							Menu
+						</li>
+						<li class=" treeview create-Proyect" ng-click="CreateProyect()" data-content="High_Project">
+							<a href="#" data-content="High_Project"> <i class="fa fa-plus-circle" data-content="High_Project"></i> <span data-content="High_Project">Crear proyecto</span> </a>
+						</li>
+						<li class="treeview view-proyect" ng-click="Show_Proyect()"  data-content="View_Project" >
+							<a href="#"  data-content="View_Project"> <i class="fa   fa-laptop" data-content="View_Project"></i> <span data-content="View_Project">Proyectos</span> </a>
+						</li>
+
+					</ul>
+				</section>
+				<!-- /.sidebar -->
+			</aside>
+
+			<!-- Content Wrapper. Contains page content -->
+			<div class="content-wrapper">
+
+				<!-- Main content -->
+				<section class="content">
+					<!-- Small boxes (Stat box) -->
+					<div class="row">
+
+						<!--content alta proyecto-->
+						<div class="str-content High_Project hide">
+
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									<h5>Nuevo proyecto <span class="alert hide text-primary update_files_excel">Salvando ...</span></h5>
+
+								</div>
+
+								<div class="panel-body">
+									<form class="form-horizontal">
+										<fieldset>
+											<div class="form-group ">
+												<label class="col-md-4 control-label" for="searchinput">Nombre del proyecto</label>
+												<div class="col-md-4 ">
+													<input  name="textinput" type="text" placeholder="Ingresa el nombre del proyecto" class="form-control input-md">
+												</div>
+
+											</div>
+
+											<div class="form-group ">
+												<label class="col-md-4 control-label" for="searchinput">Descripción del proyecto</label>
+												<div class="col-md-4 ">
+													<textarea  class="textarea_desciption" placeholder="Ingresa la descripción del proyecto"  style="width: 100%;"></textarea>																																							
+                                  
+
+
+
+												</div>
+											</div>
+
+											<h3>Agregar ejes estratégicos</h3>
+											<table class="table ">
+												<thead>
+													<tr>
+														<th>Estratégias/Acciones</th>
+														<th>Área</th>
+														<th>Responsable</th>
+														<th>Encargado</th>
+														<th>Estatus</th>
+														<th>% avance</th>
+														<th>Tiempo</th>
+														<th>Fecha Inicio</th>
+														<th>Fecha Término</th>
+														<th>Prioridad</th>
+													</tr>
+												</thead>
+												<tbody >
+													<tr>
+														<th  contenteditable="true"></th>
+														<th  contenteditable="true"></th>
+														<th  contenteditable="true"></th>
+														<th  contenteditable="true"></th>
+														<th  contenteditable="true"></th>
+														<th  contenteditable="true"></th>
+														<th  contenteditable="true"></th>
+														<th  contenteditable="true"></th>
+
+													</tr>
+												</tbody>
+											</table>
+
+											<!-- Button -->
+											<div class="form-group">
+												<label class="col-md-4 control-label" for="singlebutton"></label>
+
+												<div class="col-md-6">
+													<button type="button" class="btn btn-primary  ">
+														Agregar
+													</button>
+
+												</div>
+											</div>
+
+										</fieldset>
+									</form>
+								</div>
+
+							</div>
+
+						</div><!--end content proyecto-->
+
+						<div class="str-content View_Project_Data hide" data-content="View_Project_Data"><!--ver conetenido-->
+							<form class="form-horizontal">
+											<fieldset>
+												<div class="btn btn-primary" style="float:left;" >
+													Modificar
+												</div>
+												<div class="btn btn-primary" style="float:left;margin-left:15px;" >
+													Ver Gantt
+												</div>
+												<br>
+												<br>
+												<br>
+												<p>
+													Descripción Proyecto
+												</p>
+												<!--titulos-->
+												<div class="showDataPap" style="  overflow-y: auto;">
+													
+													
+
+												</div>
+
+											</fieldset>
+										</form>
+						</div>
+
+
+
+						<!--content ver proyecto-->
+						<div class="str-content View_Project hide">
+
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									<h5>Proyectos <span class="alert hide text-primary update_files_excel">Salvando ...</span></h5>
+
+								</div>
+
+								<div class="panel-body">
+									<form class="form-horizontal">
+										<fieldset>
+											<!-- search form -->
+											<form action="#" method="get" class="sidebar-form">
+												<div class="input-group">
+													<input type="text" name="q" class="form-control" placeholder="Buscar Proyecto"/>
+													<span class="input-group-btn">
+														<button type='submit' name='search' id='search-btn' class="btn btn-flat">
+															<i class="fa fa-search"></i>
+														</button> </span>
+												</div>
+											</form>
+
+											<br>
+											<div class="col-lg-3 col-xs-6">
+												<div class="small-box bg-aqua">
+													<div class="inner">
+														<h3>PAP ...</h3>
+														<p>
+															Proyecto
+														</p>
+													</div>
+													<div class="icon">
+														<i class="glyphicon glyphicon-folder-close"></i>
+													</div>
+													<a  class="small-box-footer"  ng-click="ViewPAP()"> Ver <i class="fa fa-arrow-circle-right"></i> </a>
+												</div>
+											</div>
+
+											<div class="col-lg-3 col-xs-6">
+												<div class="small-box bg-green">
+													<div class="inner">
+														<h3>PAP ...</h3>
+														<p>
+															Proyecto
+														</p>
+													</div>
+													<div class="icon">
+														<i class="glyphicon glyphicon-folder-close"></i>
+													</div>
+													<a class="small-box-footer" ng-click="ViewPAP()"> Ver <i class="fa fa-arrow-circle-right"></i> </a>
+												</div>
+											</div>
+
+										</fieldset>
+									</form>
+								</div>
+
+							</div>
+
+						</div><!--end content ver proyecto-->
+
+					</div><!-- /.row (main row) -->
+
+				</section><!-- /.content -->
+			</div><!-- /.content-wrapper -->
+
+			<!-- Add the sidebar's background. This div must be placed
+			immediately after the control sidebar -->
+			<div class='control-sidebar-bg'></div>
+		</div><!-- ./wrapper -->
+
+		
+
+		<!-- jQuery 2.1.4 -->
+		<script src="plugins/jQuery/jQuery-2.1.4.min.js"></script>
+		<!-- jQuery UI 1.11.2 -->
+		<script src="http://code.jquery.com/ui/1.11.2/jquery-ui.min.js" type="text/javascript"></script>
+		<!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+		<script>
+			$.widget.bridge('uibutton', $.ui.button);
+		</script>
+		<!-- Bootstrap 3.3.2 JS -->
+		<script src="bootstrap/js/bootstrap.js" type="text/javascript"></script>
+
+		<!-- Slimscroll -->
+		<script src="plugins/slimScroll/jquery.slimscroll.min.js" type="text/javascript"></script>
+
+		<!-- AdminLTE App -->
+		<script src="dist/js/app.min.js" type="text/javascript"></script>
+
+		<!-- AdminLTE for demo purposes -->
+		<script src="dist/js/demo.js" type="text/javascript"></script>
+
+		<script src="plugins/angular/onsen/js/angular/angular.js"></script>
+		<script src="plugins/angular/onsen/js/onsenui.js"></script>
+		<script src="js/app.js"></script>
+
+	</body>
+</html>
